@@ -16,7 +16,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
-<<<<<<< Updated upstream
+
 from DaisyXMusic.config import ARQ_API_KEY
 from DaisyXMusic.config import BOT_NAME as bn
 from DaisyXMusic.config import DURATION_LIMIT
@@ -34,7 +34,7 @@ from DaisyXMusic.services.callsmusic import callsmusic, queues
 from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
-=======
+
 from DaisyXMusic.config import ARQ_API_KEY
 from DaisyXMusic.config import BOT_NAME as bn
 from DaisyXMusic.config import DURATION_LIMIT
@@ -53,7 +53,7 @@ from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
 from DaisyXMusic.services.queues import queues
->>>>>>> Stashed changes
+
 
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
@@ -627,17 +627,17 @@ async def play(_, message: Message):
             emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
 
             while j < 5:
-<<<<<<< Updated upstream
+
                 toxxt += f"{emojilist[j]} [Title - {results[j]['title']}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ╚ **Duration** - {results[j]['duration']}\n"
                 toxxt += f" ╚ **Views** - {results[j]['views']}\n"
                 toxxt += f" ╚ **Channel** - {results[j]['channel']}\n\n"
-=======
+
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
                 toxxt += f" ╚ <b>Duration</b> - {results[j]['duration']}\n"
                 toxxt += f" ╚ <b>Views</b> - {results[j]['views']}\n"
                 toxxt += f" ╚ <b>Channel</b> - {results[j]['channel']}\n\n"
->>>>>>> Stashed changes
+
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -750,11 +750,11 @@ async def ytplay(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-<<<<<<< Updated upstream
+
         user.first_name = "helper"
-=======
+
         user.first_name = "DaisyXMusic"
->>>>>>> Stashed changes
+
     usar = user
     wew = usar.id
     try:
@@ -882,11 +882,11 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-<<<<<<< Updated upstream
+
             caption="▶️ **Playing** here the song requested by {} via Youtube Music 😜".format(
-=======
+
             caption="▶️ **Playing** here the song requested by {} via Youtube Music 😎".format(
->>>>>>> Stashed changes
+
                 message.from_user.mention()
             ),
         )
@@ -1109,7 +1109,7 @@ async def jiosaavn(client: Client, message_: Message):
         await res.edit("Found Literally Nothing!, You Should Work On Your English.")
         print(str(e))
         return
-<<<<<<< Updated upstream
+
     try:    
         duuration= round(sduration / 60)
         if duuration > DURATION_LIMIT:
@@ -1117,9 +1117,7 @@ async def jiosaavn(client: Client, message_: Message):
             return
     except:
         pass    
-=======
-    
->>>>>>> Stashed changes
+
     keyboard = InlineKeyboardMarkup(
         [
             [
@@ -1209,16 +1207,16 @@ async def lol_cb(b, cb):
     duration=results[x]["duration"]
     views=results[x]["views"]
     url = f"https://youtube.com{resultss}"
-<<<<<<< Updated upstream
+
     
     try:    
         duuration= round(duration / 60)
         if duuration > DURATION_LIMIT:
-=======
+
     duuration=duration.replace(":",".")
     try:    
         if int(duuration) > int(DURATION_LIMIT):
->>>>>>> Stashed changes
+
             await cb.message.edit(f"Music longer than {DURATION_LIMIT}min are not allowed to play")
             return
     except:
@@ -1284,11 +1282,11 @@ async def lol_cb(b, cb):
         await b.send_photo(chat_id,
             photo="final.png",
             reply_markup=keyboard,
-<<<<<<< Updated upstream
+
             caption=f"▶️ **Playing** here the song requested by {r_by.mention} via Youtube Music 😜",
 =======
             caption=f"▶️ **Playing** here the song requested by {r_by.mention} via Youtube Music 😎",
->>>>>>> Stashed changes
+
         )
         
         os.remove("final.png")
