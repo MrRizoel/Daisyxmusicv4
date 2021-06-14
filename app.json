@@ -1,5 +1,5 @@
 {
-  "name": "ShinchanMusic",
+  "name": "DaisyXMusic",
   "logo": "https://telegra.ph/file/9a0f259127fe5ed6b2a27.jpg",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
@@ -51,7 +51,7 @@
 <<<<<<< Updated upstream
       "value": "DaisyXMusic v4"
 =======
-      "value": "ShinchanMusic"
+      "value": "DaisyXMusic"
 >>>>>>> Stashed changes
     },
     "ASSISTANT_NAME": {

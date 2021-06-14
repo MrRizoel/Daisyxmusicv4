@@ -2,8 +2,8 @@ from os import path
 
 from youtube_dl import YoutubeDL
 
-from ShinchanMusic.config import DURATION_LIMIT
-from ShinchanMusic.helpers.errors import DurationLimitError
+from DaisyXMusic.config import DURATION_LIMIT
+from DaisyXMusic.helpers.errors import DurationLimitError
 
 ytdl = YoutubeDL(
     {

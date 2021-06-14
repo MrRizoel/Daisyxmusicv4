@@ -4,8 +4,8 @@ from pyrogram import Client
 
 from pytgcalls import GroupCall
 
-from ShinchanMusic.config import API_HASH, API_ID, SESSION_NAME
-from ShinchanMusic.services.queues import queues
+from DaisyXMusic.config import API_HASH, API_ID, SESSION_NAME
+from DaisyXMusic.services.queues import queues
 
 client = Client(SESSION_NAME, API_ID, API_HASH)
 pytgcalls = GroupCall(client)

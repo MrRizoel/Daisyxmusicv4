@@ -40,30 +40,30 @@ from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
 =======
-from ShinchanMusic.modules.play import generate_cover
-from ShinchanMusic.modules.play import arq
-from ShinchanMusic.modules.play import cb_admin_check
-from ShinchanMusic.modules.play import transcode
-from ShinchanMusic.modules.play import convert_seconds
-from ShinchanMusic.modules.play import time_to_seconds
-from ShinchanMusic.modules.play import changeImageSize
-from ShinchanMusic.config import BOT_NAME as bn
-from ShinchanMusic.config import DURATION_LIMIT
-from ShinchanMusic.config import UPDATES_CHANNEL as updateschannel
-from ShinchanMusic.config import que
-from ShinchanMusic.function.admins import admins as a
-from ShinchanMusic.helpers.errors import DurationLimitError
-from ShinchanMusic.helpers.decorators import errors
-from ShinchanMusic.helpers.admins import get_administrators
-from ShinchanMusic.helpers.channelmusic import get_chat_id
-from ShinchanMusic.helpers.decorators import authorized_users_only
-from ShinchanMusic.helpers.filters import command, other_filters
-from ShinchanMusic.helpers.gets import get_file_name
-from ShinchanMusic.services.callsmusic import callsmusic
-from ShinchanMusic.services.callsmusic.callsmusic import client as USER
-from ShinchanMusic.services.converter.converter import convert
-from ShinchanMusic.services.downloaders import youtube
-from ShinchanMusic.services.queues import queues
+from DaisyXMusic.modules.play import generate_cover
+from DaisyXMusic.modules.play import arq
+from DaisyXMusic.modules.play import cb_admin_check
+from DaisyXMusic.modules.play import transcode
+from DaisyXMusic.modules.play import convert_seconds
+from DaisyXMusic.modules.play import time_to_seconds
+from DaisyXMusic.modules.play import changeImageSize
+from DaisyXMusic.config import BOT_NAME as bn
+from DaisyXMusic.config import DURATION_LIMIT
+from DaisyXMusic.config import UPDATES_CHANNEL as updateschannel
+from DaisyXMusic.config import que
+from DaisyXMusic.function.admins import admins as a
+from DaisyXMusic.helpers.errors import DurationLimitError
+from DaisyXMusic.helpers.decorators import errors
+from DaisyXMusic.helpers.admins import get_administrators
+from DaisyXMusic.helpers.channelmusic import get_chat_id
+from DaisyXMusic.helpers.decorators import authorized_users_only
+from DaisyXMusic.helpers.filters import command, other_filters
+from DaisyXMusic.helpers.gets import get_file_name
+from DaisyXMusic.services.callsmusic import callsmusic
+from DaisyXMusic.services.callsmusic.callsmusic import client as USER
+from DaisyXMusic.services.converter.converter import convert
+from DaisyXMusic.services.downloaders import youtube
+from DaisyXMusic.services.queues import queues
 >>>>>>> Stashed changes:DaisyXMusic/modules/channelplay.py
 
 chat_id = None
@@ -390,7 +390,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "ShinchanMusic"
+        user.first_name = "DaisyXMusic"
     usar = user
     wew = usar.id
     try:
@@ -636,7 +636,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "ShinchanMusic"
+        user.first_name = "DaisyXMusic"
     usar = user
     wew = usar.id
     try:
@@ -768,7 +768,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "ShinchanMusic"
+        user.first_name = "DaisyXMusic"
     usar = user
     wew = usar.id
     try:

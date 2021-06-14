@@ -1,1 +1,1 @@
-worker: python3 -m ShinchanMusic
+worker: python3 -m DaisyXMusic

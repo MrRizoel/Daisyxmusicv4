@@ -33,7 +33,7 @@ API_HASH = getenv("API_HASH")
 BOT_USERNAME = getenv("BOT_USERNAME", "ShinchanHelper_Bot")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "Shinchan_Helper")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "Shinchan_Support")
-PROJECT_NAME = getenv("PROJECT_NAME", "ShinchanMusic")
+PROJECT_NAME = getenv("PROJECT_NAME", "DaisyXMusic")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "10"))
 ARQ_API_KEY = getenv("ARQ_API_KEY")
 >>>>>>> Stashed changes

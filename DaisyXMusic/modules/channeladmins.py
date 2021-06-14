@@ -1,13 +1,13 @@
 from asyncio.queues import QueueEmpty
-from ShinchanMusic.config import que
+from DaisyXMusic.config import que
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from ShinchanMusic.function.admins import set
-from ShinchanMusic.helpers.channelmusic import get_chat_id
-from ShinchanMusic.helpers.decorators import authorized_users_only, errors
-from ShinchanMusic.helpers.filters import command, other_filters
-from ShinchanMusic.services.callsmusic import callsmusic
+from DaisyXMusic.function.admins import set
+from DaisyXMusic.helpers.channelmusic import get_chat_id
+from DaisyXMusic.helpers.decorators import authorized_users_only, errors
+from DaisyXMusic.helpers.filters import command, other_filters
+from DaisyXMusic.services.callsmusic import callsmusic
 
 
 
