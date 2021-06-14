@@ -15,7 +15,7 @@ from pyrogram.types import Voice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
-<<<<<<< Updated upstream:DaisyXMusic/modules/channelmusic.py
+
 from DaisyXMusic.modules.play import generate_cover
 from DaisyXMusic.modules.play import arq
 from DaisyXMusic.modules.play import cb_admin_check
@@ -39,7 +39,7 @@ from DaisyXMusic.services.callsmusic import callsmusic, queues
 from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
-=======
+
 from DaisyXMusic.modules.play import generate_cover
 from DaisyXMusic.modules.play import arq
 from DaisyXMusic.modules.play import cb_admin_check
@@ -64,7 +64,6 @@ from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
 from DaisyXMusic.services.queues import queues
->>>>>>> Stashed changes:DaisyXMusic/modules/channelplay.py
 
 chat_id = None
 
