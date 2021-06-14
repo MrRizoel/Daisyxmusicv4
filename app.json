@@ -1,14 +1,23 @@
 {
-  "name": "DaisyXMusic",
+  "name": "ShinchanMusic",
+  "logo": "https://telegra.ph/file/9a0f259127fe5ed6b2a27.jpg",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
+<<<<<<< Updated upstream
   "repository": "https://github.com/TeamofDaisyX/DaisyXMusic",
+=======
+  "repository": "https://github.com/Shinchan-Helper/Mr.Shinchan_Music",
+>>>>>>> Stashed changes
   "stack": "container",
   "buildpacks": [
    {
      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
    }   
+<<<<<<< Updated upstream
   ],        
+=======
+  ],
+>>>>>>> Stashed changes
   "env": {
     "SESSION_NAME": {
       "description": "Pyrogram session string",
@@ -30,12 +39,20 @@
     "SUPPORT_GROUP": {
       "description": "Your MusicPlayer support group without @ [Leave this if you don't have one]",
       "required": false,
+<<<<<<< Updated upstream
       "value": "DaisySupport_Official"
+=======
+      "value": "Shinchan_Support"
+>>>>>>> Stashed changes
     },
     "PROJECT_NAME": {
       "description": "Your MusicPlayer project Name.",
       "required": false,
+<<<<<<< Updated upstream
       "value": "DaisyXMusic v4"
+=======
+      "value": "ShinchanMusic"
+>>>>>>> Stashed changes
     },
     "ASSISTANT_NAME": {
       "description": "Your MusicPlayer's assistant Username without @.",
@@ -49,12 +66,16 @@
     "BG_IMAGE": {
       "description": "BG image of bot (Use transparent one) [IGNORE].",
       "required": false,
-      "value": " https://telegra.ph/file/dcfdf612e499eef0e0b1f.png"
+      "value": " https://telegra.ph/file/544da923c008df67f98f4.png"
     },     
     "UPDATES_CHANNEL": {
       "description": "Updates Channel without @ [Leave this if you don't have one].",
       "required": false,
+<<<<<<< Updated upstream
       "value": "DaisyXupdates"
+=======
+      "value": "Shinchan_Updates"
+>>>>>>> Stashed changes
     },    
     "API_ID": {
       "description": "App ID from my.telegram.org/apps",
@@ -64,7 +85,11 @@
       "description": "Change to turn off",
       "required": false,
       "value": "ENABLE"
+<<<<<<< Updated upstream
     },    
+=======
+    },
+>>>>>>> Stashed changes
     "API_HASH": {
       "description": "App hash from my.telegram.org/apps",
       "required": true

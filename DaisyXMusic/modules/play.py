@@ -1,20 +1,3 @@
-# Daisyxmusic (Telegram bot project)
-# Copyright (C) 2021  Inukaasith
-# Copyright (C) 2021  TheHamkerCat (Python_ARQ)
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 import json
 import os
 from os import path
@@ -33,6 +16,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
+<<<<<<< Updated upstream
 from DaisyXMusic.config import ARQ_API_KEY
 from DaisyXMusic.config import BOT_NAME as bn
 from DaisyXMusic.config import DURATION_LIMIT
@@ -50,6 +34,26 @@ from DaisyXMusic.services.callsmusic import callsmusic, queues
 from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
+=======
+from ShinchanMusic.config import ARQ_API_KEY
+from ShinchanMusic.config import BOT_NAME as bn
+from ShinchanMusic.config import DURATION_LIMIT
+from ShinchanMusic.config import UPDATES_CHANNEL as updateschannel
+from ShinchanMusic.config import que
+from ShinchanMusic.function.admins import admins as a
+from ShinchanMusic.helpers.admins import get_administrators
+from ShinchanMusic.helpers.channelmusic import get_chat_id
+from ShinchanMusic.helpers.errors import DurationLimitError
+from ShinchanMusic.helpers.decorators import errors
+from ShinchanMusic.helpers.decorators import authorized_users_only
+from ShinchanMusic.helpers.filters import command, other_filters
+from ShinchanMusic.helpers.gets import get_file_name
+from ShinchanMusic.services.callsmusic import callsmusic
+from ShinchanMusic.services.callsmusic.callsmusic import client as USER
+from ShinchanMusic.services.converter.converter import convert
+from ShinchanMusic.services.downloaders import youtube
+from ShinchanMusic.services.queues import queues
+>>>>>>> Stashed changes
 
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
@@ -463,7 +467,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "helper"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -623,10 +627,17 @@ async def play(_, message: Message):
             emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
 
             while j < 5:
+<<<<<<< Updated upstream
                 toxxt += f"{emojilist[j]} [Title - {results[j]['title']}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ╚ **Duration** - {results[j]['duration']}\n"
                 toxxt += f" ╚ **Views** - {results[j]['views']}\n"
                 toxxt += f" ╚ **Channel** - {results[j]['channel']}\n\n"
+=======
+                toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
+                toxxt += f" ╚ <b>Duration</b> - {results[j]['duration']}\n"
+                toxxt += f" ╚ <b>Views</b> - {results[j]['views']}\n"
+                toxxt += f" ╚ <b>Channel</b> - {results[j]['channel']}\n\n"
+>>>>>>> Stashed changes
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -719,7 +730,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ **Playing** here the song requested by {} via Youtube Music 😜".format(
+            caption="▶️ **Playing** here the song requested by {} via Youtube Music 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -739,7 +750,11 @@ async def ytplay(_, message: Message):
     try:
         user = await USER.get_me()
     except:
+<<<<<<< Updated upstream
         user.first_name = "helper"
+=======
+        user.first_name = "ShinchanMusic"
+>>>>>>> Stashed changes
     usar = user
     wew = usar.id
     try:
@@ -867,7 +882,11 @@ async def ytplay(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
+<<<<<<< Updated upstream
             caption="▶️ **Playing** here the song requested by {} via Youtube Music 😜".format(
+=======
+            caption="▶️ **Playing** here the song requested by {} via Youtube Music 😎".format(
+>>>>>>> Stashed changes
                 message.from_user.mention()
             ),
         )
@@ -885,7 +904,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -1023,7 +1042,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -1060,7 +1079,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        "\n\nOr manually add Bot to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -1090,6 +1109,7 @@ async def jiosaavn(client: Client, message_: Message):
         await res.edit("Found Literally Nothing!, You Should Work On Your English.")
         print(str(e))
         return
+<<<<<<< Updated upstream
     try:    
         duuration= round(sduration / 60)
         if duuration > DURATION_LIMIT:
@@ -1097,6 +1117,9 @@ async def jiosaavn(client: Client, message_: Message):
             return
     except:
         pass    
+=======
+    
+>>>>>>> Stashed changes
     keyboard = InlineKeyboardMarkup(
         [
             [
@@ -1186,10 +1209,16 @@ async def lol_cb(b, cb):
     duration=results[x]["duration"]
     views=results[x]["views"]
     url = f"https://youtube.com{resultss}"
+<<<<<<< Updated upstream
     
     try:    
         duuration= round(duration / 60)
         if duuration > DURATION_LIMIT:
+=======
+    duuration=duration.replace(":",".")
+    try:    
+        if int(duuration) > int(DURATION_LIMIT):
+>>>>>>> Stashed changes
             await cb.message.edit(f"Music longer than {DURATION_LIMIT}min are not allowed to play")
             return
     except:
@@ -1255,7 +1284,11 @@ async def lol_cb(b, cb):
         await b.send_photo(chat_id,
             photo="final.png",
             reply_markup=keyboard,
+<<<<<<< Updated upstream
             caption=f"▶️ **Playing** here the song requested by {r_by.mention} via Youtube Music 😜",
+=======
+            caption=f"▶️ **Playing** here the song requested by {r_by.mention} via Youtube Music 😎",
+>>>>>>> Stashed changes
         )
         
         os.remove("final.png")

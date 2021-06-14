@@ -1,20 +1,3 @@
-# Daisyxmusic (Telegram bot project)
-# Copyright (C) 2021  Inukaasith
-# Copyright (C) 2021  TheHamkerCat (Python_ARQ)
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 import json
 import os
 from os import path
@@ -32,6 +15,7 @@ from pyrogram.types import Voice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
+<<<<<<< Updated upstream:DaisyXMusic/modules/channelmusic.py
 from DaisyXMusic.modules.play import generate_cover
 from DaisyXMusic.modules.play import arq
 from DaisyXMusic.modules.play import cb_admin_check
@@ -55,6 +39,32 @@ from DaisyXMusic.services.callsmusic import callsmusic, queues
 from DaisyXMusic.services.callsmusic.callsmusic import client as USER
 from DaisyXMusic.services.converter.converter import convert
 from DaisyXMusic.services.downloaders import youtube
+=======
+from ShinchanMusic.modules.play import generate_cover
+from ShinchanMusic.modules.play import arq
+from ShinchanMusic.modules.play import cb_admin_check
+from ShinchanMusic.modules.play import transcode
+from ShinchanMusic.modules.play import convert_seconds
+from ShinchanMusic.modules.play import time_to_seconds
+from ShinchanMusic.modules.play import changeImageSize
+from ShinchanMusic.config import BOT_NAME as bn
+from ShinchanMusic.config import DURATION_LIMIT
+from ShinchanMusic.config import UPDATES_CHANNEL as updateschannel
+from ShinchanMusic.config import que
+from ShinchanMusic.function.admins import admins as a
+from ShinchanMusic.helpers.errors import DurationLimitError
+from ShinchanMusic.helpers.decorators import errors
+from ShinchanMusic.helpers.admins import get_administrators
+from ShinchanMusic.helpers.channelmusic import get_chat_id
+from ShinchanMusic.helpers.decorators import authorized_users_only
+from ShinchanMusic.helpers.filters import command, other_filters
+from ShinchanMusic.helpers.gets import get_file_name
+from ShinchanMusic.services.callsmusic import callsmusic
+from ShinchanMusic.services.callsmusic.callsmusic import client as USER
+from ShinchanMusic.services.converter.converter import convert
+from ShinchanMusic.services.downloaders import youtube
+from ShinchanMusic.services.queues import queues
+>>>>>>> Stashed changes:DaisyXMusic/modules/channelplay.py
 
 chat_id = None
 
@@ -92,7 +102,7 @@ async def playlist(client, message):
     await message.reply_text(msg)
 
 
-# ============================= Settings =========================================
+# ============================= Settings ========================================= #
 
 
 def updated_stats(chat, queue, vol=100):
@@ -357,6 +367,7 @@ async def m_cb(b, cb):
         else:
             await cb.answer("Chat is not connected!", show_alert=True)
 
+# ==================================Youtube======================================= #
 
 @Client.on_message(filters.command(["channelplay","cplay"])  & filters.group & ~filters.edited)
 @authorized_users_only
@@ -379,7 +390,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "helper"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -595,13 +606,14 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ **Playing** the song requested by {} via Youtube Music 😜 in Linked Channel".format(
+            caption="▶️ **Playing** the song requested by {} via Youtube Music 😎 in Linked Channel".format(
                 message.from_user.mention()
             ),
         )
         os.remove("final.png")
         return await lel.delete()
 
+# =============================Deezer================================= #
 
 @Client.on_message(filters.command(["channeldplay","cdplay"]) & filters.group & ~filters.edited)
 @authorized_users_only
@@ -624,7 +636,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -676,7 +688,7 @@ async def deezer(client: Client, message_: Message):
     res = lel
     await res.edit(f"Searching 👀👀👀 for `{queryy}` on deezer")
     try:
-        songs = await arq.deezer(query,1)
+        songs = await arq.deezer(query, 1)
         if not songs.ok:
             await message_.reply_text(songs.result)
             return
@@ -734,6 +746,7 @@ async def deezer(client: Client, message_: Message):
     )
     os.remove("final.png")
 
+# ==============================JioSaavn=============================== #
 
 @Client.on_message(filters.command(["channelsplay","csplay"]) & filters.group & ~filters.edited)
 @authorized_users_only
@@ -755,7 +768,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "ShinchanMusic"
     usar = user
     wew = usar.id
     try:
@@ -789,7 +802,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your channel due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        "\n\nOr manually add to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)

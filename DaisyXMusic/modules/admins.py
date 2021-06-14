@@ -1,30 +1,21 @@
-# Calls Music 1 - Telegram bot for streaming audio in group calls
-# Copyright (C) 2021  Roj Serbest
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 from asyncio.queues import QueueEmpty
-from DaisyXMusic.config import que
+from ShinchanMusic.config import que
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+<<<<<<< Updated upstream
 from DaisyXMusic.function.admins import set
 from DaisyXMusic.helpers.channelmusic import get_chat_id
 from DaisyXMusic.helpers.decorators import authorized_users_only, errors
 from DaisyXMusic.helpers.filters import command, other_filters
 from DaisyXMusic.services.callsmusic import callsmusic
+=======
+from ShinchanMusic.function.admins import set
+from ShinchanMusic.helpers.channelmusic import get_chat_id
+from ShinchanMusic.helpers.decorators import authorized_users_only, errors
+from ShinchanMusic.helpers.filters import command, other_filters
+from ShinchanMusic.services.callsmusic import callsmusic
+>>>>>>> Stashed changes
 
 
 @Client.on_message(filters.command("adminreset"))
@@ -102,13 +93,13 @@ async def skip(_, message: Message):
             callsmusic.pytgcalls.change_stream(
                 chat_id, callsmusic.queues.get(chat_id)["file"]
             )
-
+    
     qeue = que.get(chat_id)
     if qeue:
         skip = qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(f"- Skipped **{skip[0]}**\n- Now Playing **{qeue[0][0]}**")
+    await message.reply_text(f"**- Skipped **{skip[0]}**\n- Now Playing **{qeue[0][0]}**")
 
 
 @Client.on_message(filters.command("admincache"))
