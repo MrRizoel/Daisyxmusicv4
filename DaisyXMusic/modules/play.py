@@ -620,7 +620,7 @@ async def play(_, message: Message):
             toxxt = "**Select the song you want to play**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
+            emojilist = ["❶","❷","❸","❹","❺",]
 
             while j < 5:
                 toxxt += f"{emojilist[j]} [Title - {results[j]['title']}](https://youtube.com{results[j]['url_suffix']})\n"
@@ -632,13 +632,13 @@ async def play(_, message: Message):
             koyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("1️⃣", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("2️⃣", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("3️⃣", callback_data=f'plll 2|{query}|{user_id}'),
+                        InlineKeyboardButton("❶", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("❷", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("❸", callback_data=f'plll 2|{query}|{user_id}'),
                     ],
                     [
-                        InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("❹", callback_data=f'plll 3|{query}|{user_id}'),
+                        InlineKeyboardButton("❺", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
                     [InlineKeyboardButton(text="❌", callback_data="cls")],
                 ]
